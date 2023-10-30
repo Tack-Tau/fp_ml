@@ -1,0 +1,13 @@
+.DS_Store
+.ipynb_checkpoints
+__pycache__
+*.pyc
+*.traj
+*.vasp
+*.f90
+*.ascii
+*.dat
+*.out
+*.xml
+slurm-*
+log
