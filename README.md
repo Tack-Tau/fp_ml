@@ -9,6 +9,7 @@
 * ASE >= 3.22.1
 * pymatgen >= v2023.9.10
 * mp-api >= 0.37.0
+* scikit-learn >= 1.2.2
 
 ## Setup
 For pymatgen documentation please visit their [website](https://pymatgen.org/)\
@@ -21,7 +22,7 @@ and [ASE calculator proposal](https://wiki.fysik.dtu.dk/ase/development/proposal
 
 ## Usage
 ### Basic ML with fp as descriptor
-See [Si_24](https://github.com/Tack-Tau/fp_ml/tree/master/Si_24) for example
+See [SiGe](https://github.com/Tack-Tau/fp_ml/tree/master/SiGe) for example
 
 ### ML with fp and interfacing with MP-API
 See [mp_api](https://github.com/Tack-Tau/fp_ml/tree/master/mp_api) for example
