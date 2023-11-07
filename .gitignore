@@ -9,5 +9,8 @@ __pycache__
 *.dat
 *.out
 *.xml
+*.pkl
+*_fp_arr
+mpid_bgap_info*
 slurm-*
 log
