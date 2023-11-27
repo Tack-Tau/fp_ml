@@ -11,6 +11,6 @@ __pycache__
 *.xml
 *.pkl
 *_fp_arr
-mpid_bgap_info*
+mpid_*
 slurm-*
 log
