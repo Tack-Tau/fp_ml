@@ -45,6 +45,7 @@ with MPRester(MP_API_KEY) as mpr:
 '''
 
 with MPRester(MP_API_KEY) as mpr:
+    '''
     entries = mpr.get_entries_in_chemsys(elements=["C", "N", "B", "O", "Si"])
     # data = collections.defaultdict(list)
     mat_id_list = []
@@ -58,8 +59,12 @@ with MPRester(MP_API_KEY) as mpr:
         struct.to('POSCAR' + '_' + str(mat_id) + '.vasp', fmt='POSCAR')
         
     # print("mat_id_list:\n", mat_id_list)
+    '''
+    
     docs = mpr.materials.summary.search(
-        material_ids = mat_id_list,
+        formula = ["**O3", "**F3", "**Cl3", "**Br3", 
+                   "**I3", "**S3", "**Se3", "**Te3", "**N3", "**P3"],
+        spacegroup_number = [2, 11, 12, 15, 59, 62, 63, 68, 71, 74, 99, 127, 139, 140, 221],
         fields = ["material_id", "is_metal", "is_gap_direct", "band_gap", "formula_pretty", "calc_types"]
     )
     mpid_bgap_dict = {
@@ -71,6 +76,13 @@ with MPRester(MP_API_KEY) as mpr:
         }
         for doc in docs
     }
+    
+    for doc in docs:
+        mat_id = str(doc.material_id)
+        chem_form = str(doc.formula_pretty)
+        struct = mpr.get_structure_by_material_id(mat_id)
+        struct.to('POSCAR' + '_' + str(mat_id) + '.vasp', fmt='POSCAR')
+        
     # sorted_mpid_bgap_dict = dict(sorted(mpid_bgap_dict.items()))
     # sorted_mpid_bgap_dict = dict( collections.OrderedDict( sorted( mpid_bgap_dict.items() ) ) )
     # print(sorted_mpid_bgap_dict)
