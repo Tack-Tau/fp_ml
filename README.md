@@ -17,7 +17,7 @@ For ASE documentation: see details for [ASE calculator class](https://wiki.fysik
 and [ASE calculator proposal](https://wiki.fysik.dtu.dk/ase/development/proposals/calculators.html#aep1)\
 `conda create -n fplibenv python=3.8 pip ; conda activate fplibenv`\
 `python3 -m pip install --user pip setuptools wheel`\
-`python3 -m pip install --user numpy scipy ase numba pymatgen mp-api`\
+`python3 -m pip install --user numpy scipy ase numba pymatgen mp-api scikit-learn`\
 `git clone https://github.com/Tack-Tau/fp_ml.git ./fplib3_ml`
 
 ## Usage
